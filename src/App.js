@@ -37,7 +37,17 @@ function App() {
       setTextBottom(event.target.value)
     }
   }
-  //...
+
+  function handleImageChange(){
+    const image = images[Math.floor(Math.random()* images.length)]
+    //Update activeImage state
+    setActiveImage(image.url)
+  }
+
+  function handleImageInputChange(event){
+    setActiveImage(window.URL.createObjectURL(event.target.files[0]))
+  }
+
 
   return (
     <div className="App">
